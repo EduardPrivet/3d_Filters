@@ -1,0 +1,95 @@
+.inputfile {
+    width:0.1px;
+    height: 0.1px;
+    opacity:0;
+    overflow: hidden;
+    position: absolute;
+    z-index:-1;
+}
+
+.inputfile + label{
+    font-family: 'Open Sans', sans-serif;
+    width:100%;
+    margin:0px ;
+    font-size:1em;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    background-color: rgb(184,9,50);
+    display:inline-block;
+    cursor:pointer;
+    padding:20px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: rgb(255,48,79);
+}
+
+@font-face {
+font-family: 'Helvetica Neue Cyr Light Italic';
+src: url('HelveticaNeueCyr-LightItalic.eot');
+src: url('HelveticaNeueCyr-LightItalic.eot?#iefix') format('embedded-opentype'),
+url('HelveticaNeueCyr-LightItalic.woff') format('woff'),
+url('HelveticaNeueCyr-LightItalic.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+
+
+h2 {
+    font-family:'Helvetica Neue Cyr Light Italic';
+    font-size: 2em;
+    margin-left: 15%;
+    font-weight:10;
+}
+
+.progress-bar {
+    padding-top: 85%;
+}
+
+.progress-percentage {
+    text-align: center;
+    font-family:'Helvetica Neue Cyr Light Italic';
+    font-size: 2em;
+    font-weight: 10;
+}
+
+.preload {
+  position: fixed;
+  width: 71%;
+  top: 2% ;
+  left: 2%;
+  right: 25%;
+  bottom: 40%;
+  text-align: center;
+  vertical-align:middle;
+  background: '0xdddddd';
+  justify-content: center;
+  align-items: center;
+  transform: translate(0, 75%)
+}
+
+@keyframes loadtext {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.preload span {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 42px;
+  animation: loadtext 2s infinite ease-in;
+}
+
+text#text-info {
+    position:absolute;
+    font-family:'Helvetica Neue Cyr Light Italic';
+    font-size: 1.5em;
+    margin-top:25%;
+    margin-right: 3%;
+    font-weight:10;
+    line-height:1.5;
+}
+
+
+

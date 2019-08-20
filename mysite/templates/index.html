@@ -1,0 +1,39 @@
+<html>
+	<head>
+	    <link rel="stylesheet" href="/static/style.css" type="text/css"/>
+	    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+	    <script src="/static/progress-bar-plugin.js"></script>
+        <script src="/static/progressbar.js"></script>
+		<title>Three.js Boilerplate</title>
+	</head>
+	<body>
+	    <div style=" display:flex; flex-direction:row; justify-content: flex-start; flex-wrap:wrap;">
+	        <div class="preload"><span>Loading ...</span></div>
+	        <div id = "3dScene"></div>
+	        <div style="display:flex; flex-direction:column; margin-left:3% ;width: 17%">
+	            <div style="display:flex; flex-direction:column;">
+	                <h2>1. Загрузите .mtl</h2>
+	                <input type="file" id="mtl_input" class = "inputfile">
+	                <label for="mtl_input"><span>ЗАГРУЗИТЬ .MTL</span></label>
+	            </div>
+	            <div style="display:flex; flex-direction:column;">
+	                <h2>2. Загрузите .obj</h2>
+	                <input type="file" id="obj_input" class = "inputfile">
+	                <label for="obj_input"><span>ЗАГРУЗИТЬ .OBJ</span></label>
+	                <text id = "text-info">*Сбросить и попробовать еще раз - F5. <br> Рекомендуемый размер obj файла до 16мб. <br> Размер хранилища - 512мб. <br> Альфа-версия, возможны ошибки.</text>
+	            </div>
+	            <div class="progress-bar">
+	         </div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
+		<script src="/static/OBJLoader.js"></script>
+		<script src="/static/MTLLoader.js"></script>
+		<script src="/static/OrbitControls.js"></script>
+        <script src="/static/scripts.js"></script>
+        <script src="/static/buttons.js"></script>
+
+	</body>
+</html>
