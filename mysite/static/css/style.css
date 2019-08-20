@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+
+}
+
+body {
+    margin: 0;
+}
+
+.inputfile {
+    width:0.1px;
+    height: 0.1px;
+    opacity:0;
+    overflow: hidden;
+    position: absolute;
+    z-index:-1;
+}
+
+.inputfile + label{
+    font-family: 'Open Sans', sans-serif;
+    
+    width: 100%;
+    text-overflow: ellipsis;
+    font-size:1em;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    background-color: rgb(184,9,50);
+    display:inline-block;
+    cursor:pointer;
+    padding:20px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: rgb(255,48,79);
+}
+
+@font-face {
+font-family: 'Helvetica Neue Cyr Light Italic';
+src: url('HelveticaNeueCyr-LightItalic.eot');
+src: url('HelveticaNeueCyr-LightItalic.eot?#iefix') format('embedded-opentype'),
+url('HelveticaNeueCyr-LightItalic.woff') format('woff'),
+url('HelveticaNeueCyr-LightItalic.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+
+h2 {
+    font-family:'Helvetica Neue Cyr Light Italic';
+    font-size: 2em;
+    font-weight:10;
+    text-align: center;
+}
+
+.progress-percentage {
+    text-align: center;
+    font-family:'Helvetica Neue Cyr Light Italic';
+    font-size: 2em;
+    font-weight: 10;
+}
+
+.preload {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes loadtext {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.preload span {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 42px;
+  animation: loadtext 2s infinite ease-in;
+}
+
+text#text-info {
+   
+    font-family:'Helvetica Neue Cyr Light Italic';
+    font-size: 1.5em;
+    font-weight:10;
+    line-height:1.5;
+    width: 100%;
+}
+
+#pb {
+    height: 8px;
+    position: relative;
+    margin: 0 10px;
+    margin-top: 1rem;
+}
+
+.main {
+    display:flex; 
+    flex-direction:row; 
+    justify-content: flex-start; 
+    flex-wrap:wrap;
+    height: 100%;
+}
+
+.content-left {
+    display: flex;
+    flex-grow: 1;
+    /* height: 100%; */
+    margin: 1rem;
+    position: relative;
+}
+
+.sidebar-right {
+    display:flex; 
+    flex-direction:column; 
+    width: 340px;
+    height: 100%;
+    padding: 1rem;
+    padding-left: 0;
+    justify-content: space-between;
+}
+
+.progressbar-text {
+    text-align: center;
+    color: black !important;
+    font-family: 'Helvetica Neue Cyr Light Italic';
+    font-weight: 600;
+}
+
+

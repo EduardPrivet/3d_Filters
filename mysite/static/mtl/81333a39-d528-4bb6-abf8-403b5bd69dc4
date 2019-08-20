@@ -1,0 +1,22 @@
+# OBJ Material Export by Luxion KeyShot
+
+newmtl Aluminum Brushed 90° #2
+Kd 0.792157 0.819608 0.933333
+
+newmtl :color:143:143:143 #2
+Kd 0.839216 0.494118 0.172549
+
+newmtl Aluminum Brushed 90° #1
+Kd 0.792157 0.819608 0.933333
+
+newmtl Carbon Fiber Gloss 5mm #1
+Kd 0.0196078 0.0196078 0.0196078
+
+newmtl Carbon Fiber Gloss 5mm #2
+Kd 0.0196078 0.0196078 0.0196078
+
+newmtl Nylon Weave Black 3mm #2
+Kd 0.500008 0.500008 0.499992
+
+newmtl Nylon Weave Black 3mm #1
+Kd 0.500008 0.500008 0.499992
