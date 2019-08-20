@@ -142,6 +142,9 @@ function upload_obj(file) {
         url: "/load_obj",
         xhr: function () {
             var myXhr = $.ajaxSettings.xhr();
+            if(myXhr.upload){
+                myXhr.upload.addEventListener('progress',progress, false);
+            }
             return myXhr;
         },
         success: function (r) {
