@@ -1,14 +1,7 @@
-<<<<<<< HEAD:mysite/static/scripts.js
-let container = document.getElementById('3dScene');  //Searching for div-container in html-doc
-var renderer = new THREE.WebGLRenderer( {antialias: true}); //enable antialiasing
-renderer.setSize( window.innerWidth*0.75, window.innerHeight*0.98 ); //
-container.append( renderer.domElement);
-=======
 const d = document;
 
 let container = document.getElementById('3dScene'); //Searching for div-container in html-doc
 var renderer = new THREE.WebGLRenderer( {antialias: true}); //enable antialiasing
->>>>>>> ba32e9c7d0d58fa4138217e1b1f74f1870465dd5:mysite/static/js/index.js
 
 
 var scene = new THREE.Scene();
@@ -22,23 +15,18 @@ controls.enableDamping = true;
 controls.dampingFactor = 0.25;
 controls.enableZoom = true;
 
-<<<<<<< HEAD:mysite/static/scripts.js
-//creating Lights
-var frontLight = new THREE.DirectionalLight(0xffffff, 0.35);
-=======
 
 //creating Lights
-var keyLight = new THREE.DirectionalLight(0xffffff, 0.35);
->>>>>>> ba32e9c7d0d58fa4138217e1b1f74f1870465dd5:mysite/static/js/index.js
-keyLight.position.set(-100, 0, -100);
+var frontLight = new THREE.DirectionalLight(0xffffff, 0.35);
+frontLight.position.set(-100, 0, -100);
 scene.add(frontLight);
 
 var leftLight = new THREE.DirectionalLight(0xffffff, 0.35);
-moonLight.position.set(-100, 0, 100);
+leftLight.position.set(-100, 0, 100);
 scene.add(leftLight);
 
 var rightLight = new THREE.DirectionalLight(0xffffff, 0.35);
-fillLight.position.set(100, 0, -100);
+rightLight.position.set(100, 0, -100);
 scene.add(rightLight);
 
 var backLight = new THREE.DirectionalLight(0xffffff, 0.35);
@@ -46,15 +34,10 @@ backLight.position.set(100, 0, 100);
 scene.add(backLight);
 
 var fillLight = new THREE.AmbientLight(0xffffff, 0.6);
-backLight.position.set(100, 0, 100);
+fillLight.position.set(100, 0, 100);
 scene.add(fillLight);
 
-<<<<<<< HEAD:mysite/static/scripts.js
-
-//Loading manager for checking progress steps
-=======
 //Initing meshes loading manager
->>>>>>> ba32e9c7d0d58fa4138217e1b1f74f1870465dd5:mysite/static/js/index.js
 const manager = new THREE.LoadingManager();
 
 //loader for mtl's
@@ -72,15 +55,12 @@ let materials;
 //hiding 'Loading...' before start of loading
 document.querySelector('.preload').style.display = 'none';
 
-<<<<<<< HEAD:mysite/static/scripts.js
-=======
 manager.onProgress = function (url,itemsLoaded,itemsTotal) {
 
     console.log(url,itemsLoaded,itemsTotal);
 
 
 };
->>>>>>> ba32e9c7d0d58fa4138217e1b1f74f1870465dd5:mysite/static/js/index.js
 
 //hiding 'Loading...' after finish of loading
 manager.onLoad = function () {
@@ -115,12 +95,8 @@ function progress(e){
         if(Percentage >= 1)
         {
            console.log('completed');
-<<<<<<< HEAD:mysite/static/scripts.js
-            // process completed
-=======
            $('#pb').hide();
             // process completed  
->>>>>>> ba32e9c7d0d58fa4138217e1b1f74f1870465dd5:mysite/static/js/index.js
         }
     }
  }
