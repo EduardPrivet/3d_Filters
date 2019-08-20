@@ -64,7 +64,7 @@ manager.onProgress = function (url,itemsLoaded,itemsTotal) {
 
 //hiding 'Loading...' after finish of loading
 manager.onLoad = function () {
-
+    $('#pb').hide();
   document.querySelector('.preload').style.display = 'none';
 };
 
@@ -247,5 +247,5 @@ $(d).ready(function(){
         }
       });
       
-     // bar.animate(1.0);  // Number from 0.0 to 1.0
+      bar.animate(0,{duration:0});  // Number from 0.0 to 1.0
 });
