@@ -72,7 +72,23 @@ var animate = function () {
 
 animate();
 
+function progress(e){
 
+    if(e.lengthComputable){
+        var max = e.total;
+        var current = e.loaded;
+
+        var Percentage = (current * 100)/max;
+        console.log(Percentage);
+
+
+        if(Percentage >= 100)
+        {
+           console.log('completed');
+            // process completed  
+        }
+    }  
+ }
 
 function upload_mtl(file) {
     var formData = new FormData();
@@ -85,6 +101,9 @@ function upload_mtl(file) {
         url: "/load_mtl",
         xhr: function () {
             var myXhr = $.ajaxSettings.xhr();
+            if(myXhr.upload){
+                myXhr.upload.addEventListener('progress',progress, false);
+            }
             return myXhr;
         },
         success: function (r) {
