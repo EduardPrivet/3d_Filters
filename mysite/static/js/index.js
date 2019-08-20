@@ -95,6 +95,7 @@ function progress(e){
         if(Percentage >= 1)
         {
            console.log('completed');
+           document.querySelector('.preload').style.display = 'flex';
           
             // process completed  
         }
@@ -114,7 +115,7 @@ function upload_mtl(file) {
         xhr: function () {
             var myXhr = $.ajaxSettings.xhr();
             if(myXhr.upload){
-                myXhr.upload.addEventListener('progress',progress, false);
+              //  myXhr.upload.addEventListener('progress',progress, false);
             }
             return myXhr;
         },
@@ -167,7 +168,7 @@ function upload_obj(file) {
             $('#pb').show();
         },
         success: function (r) {
-            document.querySelector('.preload').style.display = 'flex';
+            
             console.log(r);
             objLoader.setMaterials(materials);
             objLoader.setPath();
