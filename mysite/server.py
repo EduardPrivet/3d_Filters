@@ -33,6 +33,9 @@ def load_obj():
     f.save(name)
     return jsonify({"name":name.replace("mysite","")})
 
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8003, debug=False)
+
 
 
 
