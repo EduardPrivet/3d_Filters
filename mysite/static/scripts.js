@@ -1,6 +1,6 @@
-let container = document.getElementById('3dScene');
-var renderer = new THREE.WebGLRenderer( {antialias: true});
-renderer.setSize( window.innerWidth*0.75, window.innerHeight*0.98 );
+let container = document.getElementById('3dScene');  //Searching for div-container in html-doc
+var renderer = new THREE.WebGLRenderer( {antialias: true}); //enable antialiasing
+renderer.setSize( window.innerWidth*0.75, window.innerHeight*0.98 ); //
 container.append( renderer.domElement);
 
 
@@ -9,61 +9,60 @@ scene.background = new THREE.Color( 0xdddddd );
 var camera = new THREE.PerspectiveCamera( 75, window.innerWidth*0.75/window.innerHeight*0.98, 1, 2000 );
 camera.position.z = 200;
 
+//enable control by mouse
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.25;
 controls.enableZoom = true;
 
-var keyLight = new THREE.DirectionalLight(0xffffff, 0.35);
+//creating Lights
+var frontLight = new THREE.DirectionalLight(0xffffff, 0.35);
 keyLight.position.set(-100, 0, -100);
-scene.add(keyLight);
+scene.add(frontLight);
 
-var moonLight = new THREE.DirectionalLight(0xffffff, 0.35);
+var leftLight = new THREE.DirectionalLight(0xffffff, 0.35);
 moonLight.position.set(-100, 0, 100);
-scene.add(moonLight);
+scene.add(leftLight);
 
-var fillLight = new THREE.DirectionalLight(0xffffff, 0.35);
+var rightLight = new THREE.DirectionalLight(0xffffff, 0.35);
 fillLight.position.set(100, 0, -100);
-scene.add(fillLight);
+scene.add(rightLight);
 
 var backLight = new THREE.DirectionalLight(0xffffff, 0.35);
 backLight.position.set(100, 0, 100);
 scene.add(backLight);
 
-
-var backLight = new THREE.AmbientLight(0xffffff, 0.6);
+var fillLight = new THREE.AmbientLight(0xffffff, 0.6);
 backLight.position.set(100, 0, 100);
-scene.add(backLight);
+scene.add(fillLight);
 
 
+//Loading manager for checking progress steps
 const manager = new THREE.LoadingManager();
 
-
+//loader for mtl's
 const mtlLoader = new THREE.MTLLoader();
-mtlLoader.setTexturePath();
-mtlLoader.setPath();
+
 
 var LoadingBar = false;
 
+//loader for obj's
 const objLoader =  new THREE.OBJLoader(manager);
 
-
+//need for mtl
 let materials;
 
-;
+//hiding 'Loading...' before start of loading
 document.querySelector('.preload').style.display = 'none';
 
-manager.onProgress = function () {
 
-
-};
-
+//hiding 'Loading...' after finish of loading
 manager.onLoad = function () {
 
   document.querySelector('.preload').style.display = 'none';
 };
 
-
+//rendering scene & enable control
 var animate = function () {
 	requestAnimationFrame( animate );
 	controls.update();
@@ -72,6 +71,7 @@ var animate = function () {
 
 animate();
 
+//track uploading progress
 function progress(e){
 
     if(e.lengthComputable){
@@ -85,10 +85,11 @@ function progress(e){
         if(Percentage >= 100)
         {
            console.log('completed');
-            // process completed  
+            // process completed
         }
-    }  
+    }
  }
+
 
 function upload_mtl(file) {
     var formData = new FormData();
