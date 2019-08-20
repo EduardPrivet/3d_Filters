@@ -18,7 +18,7 @@ body {
 
 .inputfile + label{
     font-family: 'Open Sans', sans-serif;
-    
+
     width: 100%;
     text-overflow: ellipsis;
     font-size:1em;
@@ -80,11 +80,14 @@ h2 {
   color: #fff;
   font-family: 'Roboto', sans-serif;
   font-size: 42px;
+  text-transform: uppercase;
+  font-weight:bold;
+  color: rgba(0,0,0,0.7) !important;
   animation: loadtext 2s infinite ease-in;
 }
 
 text#text-info {
-   
+
     font-family:'Helvetica Neue Cyr Light Italic';
     font-size: 1.5em;
     font-weight:10;
@@ -100,9 +103,9 @@ text#text-info {
 }
 
 .main {
-    display:flex; 
-    flex-direction:row; 
-    justify-content: flex-start; 
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
     flex-wrap:wrap;
     height: 100%;
 }
@@ -116,8 +119,8 @@ text#text-info {
 }
 
 .sidebar-right {
-    display:flex; 
-    flex-direction:column; 
+    display:flex;
+    flex-direction:column;
     width: 340px;
     height: 100%;
     padding: 1rem;

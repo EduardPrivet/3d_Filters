@@ -1,13 +1,13 @@
 <html>
 	<head>
 	    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?{{ timestamp }}">
-	
+
 		<title>Загрузка 3д объекта</title>
 	</head>
 	<body>
 	    <div class="main">
 	        <div class="content-left" id="3dScene">
-				<div class="preload"><span>Rendering...</span></div>
+				<div class="preload"><span>Rendering</span></div>
 			</div>
 	        <div class="sidebar-right">
 				<div class="top_container">
@@ -23,7 +23,7 @@
 					</div>
 					<div id="pb" class="progress-bar" style="display: none;"></div>
 				</div>
-	            
+
 				<text id="text-info">*Сбросить и попробовать еще раз - F5. <br> Рекомендуемый размер obj файла до 16мб. <br> Размер хранилища - 512мб. <br> Альфа-версия, возможны ошибки.</text>
 	         </div>
 

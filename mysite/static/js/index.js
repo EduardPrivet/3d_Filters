@@ -87,7 +87,7 @@ function progress(e){
         var Percentage = current/max;
         console.log(Percentage);
 
-       
+
         bar.animate(Percentage,{duration:100});
 
 
@@ -96,8 +96,8 @@ function progress(e){
         {
            console.log('completed');
            document.querySelector('.preload').style.display = 'flex';
-          
-            // process completed  
+
+            // process completed
         }
     }
  }
@@ -152,7 +152,7 @@ function upload_obj(file) {
 
     formData.append("file", file, "name");
     formData.append("upload_file", true);
-    
+
     $.ajax({
         type: "POST",
         url: "/load_obj",
@@ -168,7 +168,7 @@ function upload_obj(file) {
             $('#pb').show();
         },
         success: function (r) {
-            
+
             console.log(r);
             objLoader.setMaterials(materials);
             objLoader.setPath();
@@ -223,7 +223,7 @@ $(d).ready(function(){
         strokeWidth: 4,
         easing: 'easeInOut',
         duration: 1400,
-        color: 'rgb(184,9,50)',
+        color: 'rgb(14, 103, 255)',
         trailColor: '#eee',
         trailWidth: 1,
         svgStyle: {width: '100%', height: '100%'},
@@ -247,6 +247,6 @@ $(d).ready(function(){
           bar.setText(Math.round(bar.value() * 100) + ' %');
         }
       });
-      
+
       bar.animate(0,{duration:0});  // Number from 0.0 to 1.0
 });
