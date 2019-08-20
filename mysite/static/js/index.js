@@ -87,7 +87,7 @@ function progress(e){
         var Percentage = current/max;
         console.log(Percentage);
 
-        $('#pb').show();
+       
         bar.animate(Percentage,{duration:100});
 
 
@@ -95,7 +95,7 @@ function progress(e){
         if(Percentage >= 1)
         {
            console.log('completed');
-           $('#pb').hide();
+          
             // process completed  
         }
     }
@@ -164,6 +164,7 @@ function upload_obj(file) {
         },
         beforeSend:function(e){
             bar.animate(0,{duration:0});
+            $('#pb').show();
         },
         success: function (r) {
             document.querySelector('.preload').style.display = 'flex';
