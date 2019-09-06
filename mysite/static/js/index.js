@@ -5,17 +5,16 @@ var renderer = new THREE.WebGLRenderer( {antialias: true}); //enable antialiasin
 
 
 var scene = new THREE.Scene();
-scene.background = new THREE.Color( 0xdddddd );
-var camera = new THREE.PerspectiveCamera( 75, window.innerWidth*0.75/window.innerHeight*0.98, 1, 2000 );
-camera.position.z = 200;
+scene.background = new THREE.Color( 0xffffff );
+var camera = new THREE.PerspectiveCamera( 45, $(container).width()/ $(container).height(), 1, 10000 );
+
 
 //enable control by mouse
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
-controls.dampingFactor = 0.25;
+controls.dampingFactor = 0.15;
 controls.enableZoom = true;
-
-
+controls.rotateSpeed = 0.3;
 //creating Lights
 var frontLight = new THREE.DirectionalLight(0xffffff, 0.35);
 frontLight.position.set(-100, 0, -100);
@@ -175,10 +174,18 @@ function upload_obj(file) {
             objLoader.load(r.name, function (object) {
 
                 scene.add(object);
-                object.position.y -= 90;
-		        object.scale.x=20000;
-		        object.scale.y=20000;
-		        object.scale.z=20000;
+
+		        object.scale.x=10000;
+		        object.scale.y=10000;
+		        object.scale.z=10000;
+		        boundingBox = new THREE.Box3().setFromObject(object)
+                objectSize = boundingBox.getSize() // Returns Vector3
+                objectMaxSize = Math.max(objectSize.x, objectSize.y);
+		        object.position.y=-objectSize.y*0.5;
+		        object.position.x=0;
+		        camera.position.z = 1.5*objectMaxSize;
+		        object.position.z = 0;
+		        console.log(objectMaxSize);
 
             });
         },
